@@ -2,11 +2,9 @@ import { Worker } from 'bullmq'
 import { connection } from '../config/redis.js'
 import { taskModel } from '../models/taskModel.js'
 
-/*
------------------------------------------
-FACTORIAL (simple version)
------------------------------------------
-*/
+
+//FACTORIAl
+
 function factorial(n) {
     let result = 1
 
@@ -17,11 +15,7 @@ function factorial(n) {
     return result
 }
 
-/*
------------------------------------------
-WORKER
------------------------------------------
-*/
+//worker
 export const taskWorker = new Worker(
     "task-queue",
 
@@ -107,11 +101,7 @@ if(task.type=="notification"){
     }
 )
 
-/*
------------------------------------------
-EVENTS (simplified)
------------------------------------------
-*/
+//events
 taskWorker.on("completed", (job) => {
     console.log("Job completed:", job.id)
 })
