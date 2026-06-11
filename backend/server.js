@@ -24,6 +24,7 @@ app.use('/user',userApp);
 app.use('/task',taskApp);
 async function Server(){
 try{
+  console.log(process.env.DB_URL);
  const res = await connect(process.env.DB_URL);
  console.log("DB connected Successfully");
  const port = process.env.PORT;
