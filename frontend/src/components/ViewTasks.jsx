@@ -14,7 +14,7 @@ function ViewTasks() {
             try {
 
                 const res = await axios.get(
-                    "http://localhost:4000/task/all",
+                    "https://distributedtaskqueue.onrender.com/task/all",
                     {
                         withCredentials: true
                     }

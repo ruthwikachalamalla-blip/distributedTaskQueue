@@ -10,7 +10,7 @@ function UserDetails() {
   const fetchDetails = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:4000/user/details",
+        "https://distributedtaskqueue.onrender.com/user/details",
         { withCredentials: true }
       );
       console.log(res.data.payLoad);

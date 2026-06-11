@@ -15,7 +15,7 @@ function NumberTask() {
     setLoading(true);
     const formData = new FormData();
     formData.append("number",Number(data.number));
-    let res = await axios.post("http://localhost:4000/task/number",formData,{withCredentials:true});
+    let res = await axios.post("https://distributedtaskqueue.onrender.com/task/number",formData,{withCredentials:true});
     if(res.status==201){
       console.log(res.data.result.factorial);
       setFactorial(res.data.result.factorial);

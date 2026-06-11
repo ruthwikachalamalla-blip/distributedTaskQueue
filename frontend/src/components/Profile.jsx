@@ -12,7 +12,7 @@ function Profile() {
             try {
                 setLoading(true);
                 const response = await axios.get(
-                    "http://localhost:4000/user/details",
+                    "https://distributedtaskqueue.onrender.com/user/details",
                     { withCredentials: true }
                 );
                 setUserObj(response.data.payLoad);

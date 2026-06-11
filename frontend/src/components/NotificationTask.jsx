@@ -17,7 +17,7 @@ function NotificationTask() {
         console.log(data);
         formData.append("title", data.title);
         formData.append("message", data.message);
-        const res = await axios.post("http://localhost:4000/task/notification", formData, { withCredentials: true });
+        const res = await axios.post("https://distributedtaskqueue.onrender.com/task/notification", formData, { withCredentials: true });
         if (res.status == 200) {
             setNotificationTitle(res.data.payload.title);
             setNotificationMessage(res.data.payload.message);
