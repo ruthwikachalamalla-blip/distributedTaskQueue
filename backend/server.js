@@ -15,11 +15,10 @@ config();
 const app = exp();
 app.use(exp.json());
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: ["http://localhost:5173", "https://distributed-task-queue-9kdhd8hvk.vercel.app"],
   credentials: true
 }))
 app.use(cookieParser())
-
 app.use('/user',userApp);
 app.use('/task',taskApp);
 async function Server(){
