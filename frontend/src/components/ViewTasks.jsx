@@ -21,6 +21,7 @@ function ViewTasks() {
                 )
 
                 // FIXED HERE
+                console.log(res);
                 setTasks(res.data.payload)
 
             } catch (err) {
