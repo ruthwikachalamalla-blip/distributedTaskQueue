@@ -64,8 +64,8 @@ userApp.post('/login',upload.none(),async(req,res)=>{
     res.cookie("token",signedToken,
         {
             httpOnly:true,
-            secure:false,
-            sameSite:"lax"
+            secure:true,
+            sameSite:"none"
         })
         //response for successful login
         res.status(201).json({message:"Login Successful..."});
@@ -76,8 +76,8 @@ userApp.post('/login',upload.none(),async(req,res)=>{
 userApp.post('/logout',verifyToken(),(req,res)=>{
 res.clearCookie("token",{
     httpOnly:true,
-    secure:false,
-    sameSite:"lax"
+    secure:true,
+    sameSite:"none"
 });
 res.status(200).json({message:"Logout successful..."})
 })
